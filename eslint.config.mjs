@@ -13,6 +13,9 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    extends: ["plugin:react/jsx-runtime"]
+  }
 ]);
 
 export default eslintConfig;

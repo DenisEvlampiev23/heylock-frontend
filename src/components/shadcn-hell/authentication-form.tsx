@@ -18,6 +18,7 @@ import { useState } from "react";
 import { signInWithEmail, signInWithGitHub, signInWithGoogle } from "@/lib/authentication/authentication";
 import { Mail } from "lucide-react";
 import { Spinner } from "./ui/spinner";
+import Link from "next/link";
 
 type AuthenticationFormProps = { type: 'signIn' | 'signUp' } & React.ComponentProps<"div">;
 
@@ -152,8 +153,8 @@ export function AuthenticationForm({ className, ...props }: AuthenticationFormPr
               <FieldDescription className="text-center">
                 {
                   props.type === "signUp"
-                  ? <>Already have an account? <a href="/sign-in">Sign in</a></>
-                  : <>Don't have an account? <a href="/sign-up">Sign up</a></>
+                  ? <>Already have an account? <Link href="/sign-in">Sign in</Link></>
+                  : <>Don't have an account? <Link href="/sign-up">Sign up</Link></>
                 }
                 
               </FieldDescription>

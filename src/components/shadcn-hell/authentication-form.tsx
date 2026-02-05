@@ -10,6 +10,7 @@ import Image from "next/image"
 import LogoBlack from "../../../public/logotypes/logo-128-black.svg";
 import LogoWhite from "../../../public/logotypes/logo-128-white.svg";
 import GithubWhite from "../../../public/logotypes/github-16-white.svg";
+import GithubBlack from "../../../public/logotypes/github-16-black.svg";
 import GoogleColor from "../../../public/logotypes/google-64-color.png";
 import z from "zod";
 import { toast } from "sonner";
@@ -129,7 +130,8 @@ export function AuthenticationForm({ className, ...props }: AuthenticationFormPr
               <Field className="grid grid-cols-2 gap-4">
                 
                 <Button variant="outline" type="button" onClick={handleGithubAuth}>
-                  <Image src={GithubWhite} alt="Github"/>
+                  <Image src={GithubWhite} alt="Github" className="hidden dark:block"/>
+                  <Image src={GithubBlack} alt="Github" className="block dark:hidden"/>
                   {
                     props.type === "signUp"
                     ? <span className="sr-only">Sign up with Github</span>
@@ -158,7 +160,7 @@ export function AuthenticationForm({ className, ...props }: AuthenticationFormPr
             </FieldGroup>
           </form>
           
-          <div className="bg-white dark:bg-black relative hidden md:flex items-center justify-center">
+          <div className="bg-sidebar dark:bg-black relative hidden md:flex items-center justify-center">
             <div className="hidden dark:block">
               <Image src={LogoWhite} alt="Heylock logo" className="w-16 -translate-x-1 opacity-5 hover:opacity-100 transition-opacity duration-300 animate-pulse blur-sm absolute"/>
               <Image src={LogoWhite} alt="Heylock logo" className="w-16 -translate-x-1"/>
